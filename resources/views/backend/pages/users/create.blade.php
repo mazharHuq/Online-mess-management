@@ -19,7 +19,7 @@
             <div class="preview" style="">
                 <div class="flex flex-col sm:flex-row items-center">
                     <label class="w-full sm:w-20 sm:text-right sm:mr-5">User Name</label>
-                    <input type="text" class="input w-full border mt-2 flex-1" placeholder="Niamul Hasan" name="name">
+                    <input type="text" class="input w-full border mt-2 flex-1" placeholder="name" name="name">
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center">
@@ -38,7 +38,7 @@
                 </div>
                 
                 @foreach ($roles as $role)
-                    @if ($role->guard_name == 'web')
+                    @if ($role->guard_name == 'web'  )
                         <div class="flex items-center text-gray-700 mt-5 sm:ml-20 sm:pl-5">
                             <input type="checkbox" class="input border mr-2" value="{{ $role->name }}" name="roles[]" id="permission-{{ $loop->index }}">
                             <label class="cursor-pointer select-none" for="permission-{{ $loop->index }}">{{ $role->name }}</label>

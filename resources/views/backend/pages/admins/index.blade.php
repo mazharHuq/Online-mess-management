@@ -19,7 +19,19 @@
         </thead>
         <tbody>
             
-            @foreach ($admins as $admin)
+            @foreach ($admins as $admin )
+
+                    <?php
+                        $flag=0;
+
+                        foreach ($admin->roles as $role)
+                        if ($role->name=='god')
+                            {
+                                $flag=1;
+                            }
+                        ?>
+
+@if($flag!=1)
             <tr class="intro-x">
                 <td class="w-40">
                     <div class="flex">
@@ -51,6 +63,7 @@
                     </div>
                 </td>
             </tr>
+@endif
             @endforeach
         </tbody>
     </table>

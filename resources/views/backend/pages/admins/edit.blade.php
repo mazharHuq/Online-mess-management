@@ -44,7 +44,7 @@
                 </div>
                 
                 @foreach ($roles as $role)
-                    @if ($role->guard_name == 'admin')
+                    @if ($role->guard_name == 'admin' &&$role->name!='god')
                         <div class="flex items-center text-gray-700 mt-5 sm:ml-20 sm:pl-5">
                             <input type="checkbox" class="input border mr-2" value="{{ $role->name }}" name="roles[]" id="permission-{{ $loop->index }}" {{ $admin->hasRole($role) ? 'checked' : ''}}>
                             <label class="cursor-pointer select-none" for="permission-{{ $loop->index }}">{{ $role->name }}</label>

@@ -15,11 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        if (is_null(User::where('email', 'niamulhasanbd@gmail.com')->first())) {
+        if (is_null(User::where('email', 'thanvi@gmail.com')->first())) {
             $user = new User();
-            $user->name = "Niamul Hasan";
-            $user->email = "niamulhasanbd@gmail.com";
-            $user->password = Hash::make('niamulhasan');
+            $user->name = "Thanvi";
+            $user->email = "thanvi@gmail.com";
+            $user->password = Hash::make('thanvi');
             $user->save();
         }
     }

@@ -18,10 +18,9 @@ class RolePermissionSeeder extends Seeder
         //Create Roles
         $roleGod = Role::create(['name' => 'god', 'guard_name' => 'admin']);
         $roleAdmin = Role::create(['name' => 'admin', 'guard_name' => 'admin']);
-        $roleSubAdmin = Role::create(['name' => 'subAdmin', 'guard_name' => 'admin']);
+
         $roleManager = Role::create(['name' => 'manager', 'guard_name' => 'admin']);
-        $roleSale = Role::create(['name' => 'sale', 'guard_name' => 'admin']);
-        $premiumUser = Role::create(['name' => 'premiumUser', 'guard_name' => 'web']);
+
 
         //Permissions
         $permissions = [
@@ -69,7 +68,7 @@ class RolePermissionSeeder extends Seeder
             $permission_users = Permission::create(['name' => $permissions_users[$i], 'guard_name' => 'web']);
 
             //Assign Permission to a Role
-            $premiumUser->givePermissionTo($permission_users);
+
         }
     }
 }
